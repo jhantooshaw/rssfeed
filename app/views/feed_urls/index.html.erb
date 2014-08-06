@@ -1,0 +1,28 @@
+<%= render :partial => "form" %>
+<%unless @feed_urls.blank?%>
+  <table class="table table-striped">
+    <thead>
+    <th>Title</th>
+    <th>Feed URL</th>
+    <th>Actions</th>
+  </thead>
+  <tbody>
+    <% @feed_urls.each do |feed_url| %>
+      <tr>
+        <td>
+          <%= feed_url.title%>
+        </td>
+        <td>
+          <%= feed_url.url%>
+        </td>
+        <td><%= link_to 'Edit', feed_urls_path(:id => feed_url.id) %></td>
+        <td><%= link_to 'Destroy',  feed_url, :method => :delete, :confirm => "Are you sure?" %></td>
+
+      </tr>
+    <% end %>
+  </tbody>
+  </table>
+  <div class="digg_pagination">
+    <%= will_paginate @feed_urls %>
+  </div>
+<%end%>

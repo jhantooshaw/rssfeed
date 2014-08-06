@@ -1,0 +1,21 @@
+<%unless @feed_rsses.blank?%>
+  <table class="table table-striped">
+    <thead>
+    <th>Name</th>
+  </thead>
+  <tbody>
+    <% @feed_rsses.each do |feed| %>
+      <tr>
+        <td>
+          <%= link_to feed.name, feed.url, :target => "_blank" %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+  </table>
+  <div class="digg_pagination">
+    <%= will_paginate @feed_rsses %>
+  </div>
+<%else%>
+  <h3>NO FEED IS FOUND</h3>
+<%end%>

@@ -1,0 +1,13 @@
+<div style="padding-top: 10px;">
+  <%= form_for @feed_url, :html => {:class => "form-horizontal"} do |f| %>
+    <div class="form-group">
+      <label for="inputEmail3" class="col-sm-2 control-label" style="width:8%;" >Feed Url</label>
+      <div class="col-sm-5">
+        <%=f.text_field :url, :class => "form-control", :placeholder => "Enter Feed Url", :required => "required"  %>
+      </div>
+      <div class="col-sm-2">
+        <%= f.submit :class => "btn btn-primary" %>
+      </div>
+    </div>
+  <% end %>
+</div>

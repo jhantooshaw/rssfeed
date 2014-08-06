@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Rssfeed</title>
+    <%= stylesheet_link_tag    "application", :media => "all" %>
+    <%= javascript_include_tag "application" %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+    <div role="navigation" class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button data-target=".navbar-collapse" data-toggle="collapse" class="navbar-toggle" type="button">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a href="/" class="navbar-brand">TEST APPLICATION</a>
+        </div>
+        <div class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li class="<%= 'active' if ["index", "edit","create", "update", "destroy"].include?(params[:action]) %>"><a href="/" >Feed Url List</a></li>
+            <li class="<%= 'active' if params[:action]== 'feed_list' %>"><a href="/feed-list" >Feed List</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+    <div class="container">
+      <%= render 'layouts/messages' %>
+<%#= bootstrap_flash %>
+      <%= yield %>
+    </div>
+  </body>
+</html>

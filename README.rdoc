@@ -3,3 +3,4 @@ This application is based on fetching relevent information or data of relative f
 There is a redaer page(Feed list) where you can see list of feed for respective feed url.
 
 There is also a rake task from where you can fetch the updated rss feed either manually or set into a cronjob.
+
